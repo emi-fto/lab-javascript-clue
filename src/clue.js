@@ -121,12 +121,28 @@ weight: 20
 
 // ITERATION 2
 
-function selectRandom() {}
+function selectRandom(arrayOfObjects) {
+  let randomNumberOfIndex = Math.floor(arrayOfObjects.length * Math.random());
+  return arrayOfObjects[randomNumberOfIndex];
+}
 
-function pickMystery() {}
+function pickMystery() {
+  const randomSuspect = selectRandom(suspectsArray);
+  const randomWeapon = selectRandom(weaponsArray);
+  const randomRoom = selectRandom(roomsArray);
+  const mistery = {
+    suspect: randomSuspect,
+    weapon: randomWeapon,
+    room: randomRoom
+  };
+  return mistery;
+}
 
 
 // ITERATION 3
 
-function revealMystery() {}
+function revealMystery(envelopeObject) {
+const {suspect, weapon, room} = envelopeObject;
+return `${suspect.firstName} ${suspect.lastName} killed Mr. Boddy using the ${weapon.name} in the ${room.name}!`
+}
 
