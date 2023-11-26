@@ -142,7 +142,6 @@ function pickMystery() {
 // ITERATION 3
 
 function revealMystery(envelopeObject) {
-const {suspect, weapon, room} = envelopeObject;
-return `${suspect.firstName} ${suspect.lastName} killed Mr. Boddy using the ${weapon.name} in the ${room.name}!`
+return `${envelopeObject.suspect.firstName} ${envelopeObject.suspect.lastName} killed Mr. Boddy using the ${envelopeObject.weapon.name} in the ${envelopeObject.room.name}!`
 }
 
